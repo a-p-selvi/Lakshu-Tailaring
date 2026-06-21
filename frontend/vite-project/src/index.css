@@ -1,0 +1,145 @@
+/* Main App Wrapper */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  overflow-x: hidden;
+}
+
+
+/* App container animation */
+.app {
+  min-height: 100vh;
+  animation: pageFade 0.8s ease-in-out;
+}
+
+
+/* Content area */
+main {
+  flex: 1;
+  padding: 30px;
+  animation: slideUp 0.8s ease;
+}
+
+
+/* Glass effect for components */
+.navbar,
+.footer {
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+
+/* Hover glow effect */
+button,
+a {
+  transition: 0.3s ease;
+}
+
+
+button:hover,
+a:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 0 15px #38bdf8;
+}
+
+
+/* Page load animation */
+@keyframes pageFade {
+
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+/* Slide animation */
+@keyframes slideUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* Floating background circles */
+
+body::before,
+body::after {
+
+  content:"";
+  position: fixed;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    #38bdf8,
+    #a855f7
+  );
+  filter: blur(90px);
+  z-index: -1;
+  animation: float 6s infinite alternate;
+
+}
+
+
+body::before {
+  top: 10%;
+  left: -80px;
+}
+
+
+body::after {
+  bottom: 10%;
+  right: -80px;
+}
+
+
+
+@keyframes float {
+
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(50px);
+  }
+
+}
+
+
+
+/* Mobile responsive */
+
+@media(max-width:768px){
+
+  main{
+    padding:15px;
+  }
+
+}
