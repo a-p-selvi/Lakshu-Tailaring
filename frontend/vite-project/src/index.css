@@ -135,11 +135,79 @@ body::after {
 
 
 /* Mobile responsive */
+/* Mobile Responsive */
 
-@media(max-width:768px){
+@media screen and (max-width: 768px) {
 
-  main{
-    padding:15px;
+  *{
+    box-sizing: border-box;
   }
 
+  body{
+    overflow-x: hidden;
+  }
+
+  .nav-container{
+    padding: 15px;
+  }
+
+  .logo{
+    font-size: 22px;
+  }
+
+  .hamburger{
+    display:block !important;
+  }
+
+  .menu{
+    display:none;
+  }
+
+  .menu.active{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+  }
+
+  .hero,
+  .about,
+  .services,
+  .gallery,
+  .contact{
+    padding:20px;
+  }
+
+  h1{
+    font-size:2rem !important;
+  }
+
+  h2{
+    font-size:1.5rem !important;
+  }
+
+  p{
+    font-size:14px;
+  }
+
+  .login-card{
+    width:90% !important;
+    margin:auto;
+  }
+
+  img{
+    max-width:100%;
+    height:auto;
+  }
+
+  .cards,
+  .service-grid,
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr !important;
+    gap:15px;
+  }
+
+  button{
+    width:100%;
+  }
 }

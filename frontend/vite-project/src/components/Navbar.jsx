@@ -355,6 +355,19 @@ transform:translateY(0);
 
 
 }
+@media(max-width:1024px){
+  .hamburger{
+    display:block;
+  }
+
+  .menu{
+    display:none;
+  }
+
+  .menu.active{
+    display:flex;
+  }
+}
 
 
 
@@ -431,12 +444,10 @@ Login
 
 
 <div
-className="hamburger"
-onClick={()=>setOpen(!open)}
+  className="hamburger"
+  onClick={() => setOpen(!open)}
 >
-
-☰
-
+  {open ? "✕" : "☰"}
 </div>
 
 
